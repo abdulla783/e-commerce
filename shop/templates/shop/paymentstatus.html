@@ -1,0 +1,31 @@
+{% extends 'shop/basic.html' %}
+
+{% block title %} Payment Status {% endblock %}
+
+{% block body %}
+<div class="container">
+    <!-- {{response}} -->
+    <div class="col my-4">
+        <h3>Payment status regarding your order Id {{response.ORDERID}}</h3>
+        {% if response.RESPCODE == '01' %}
+        <h4>Order Success</h4>
+        <h5>Payment Gateway: {{response.GATEWAYNAME}}</h5>
+        <h5>Txn Id: {{response.TXNID}}</h5>
+        <h5>Txn Amount: {{response.TXNAMOUNT}}</h5>
+        <h5>Order Id: {{response.ORDERID}}</h5>
+        <h5>Bank Txn Id: {{response.BANKTXNID}}</h5>
+        <h5>Txn Date: {{response.TXNDATE}}</h5>
+
+        {% else %}
+        Order Failed
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}
+
+{% block js %}
+<script>
+   
+</script>
+{% endblock %}

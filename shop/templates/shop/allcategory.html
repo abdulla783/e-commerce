@@ -1,0 +1,13 @@
+{% extends 'shop/basic.html' %}
+
+{% block title %} All Categories {% endblock %}
+
+{% block body %} 
+<div class="container my-2">
+{% for product in allProds %}
+
+<a href="">{{product.0.category}}</a><br>
+
+{% endfor %}
+</div>
+{% endblock %}
